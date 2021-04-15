@@ -3,10 +3,19 @@ import numpy as np
 
 def import_csv(filename):
     data = pd.read_csv (filename)
-    print (data.head())
-    print (data.index)
-    print (data.info)
+    print(data)
+    print(data.index())
 
 import_csv("Starbucks satisfactory survey.csv")
+
+
+
+
+
+
+
+
+
+
 
 

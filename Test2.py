@@ -13,14 +13,15 @@ print(missing_value)
 
 print(telco_data.describe())
 
+customer_list=telco_data[telco_data["customerID"], telco_data["Churn"]]
+print(customer_list)
+
 def import_csv(filename):
     data=pd.read_csv(filename)
     print(data.head())
+    print(data)
 
-import_csv("portfolio.csv")
 
-def cleaned_data(filename):
-    data=
+import_csv("Telco-Customer-Churn.csv")
 
-customer_list=telco_data["customerID"]
-print(customer_list)
+

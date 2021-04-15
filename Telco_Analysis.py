@@ -14,3 +14,8 @@ print(Customer_Churn.shape, droprows.shape)
 TotalSpend=Customer_Churn["TotalCharges"].sum()
 print(TotalSpend)
 
+df=Customer_Churn[["gender", "Churn"]]
+print(df.head())
+
+df = pd.read_csv('Telco-Customer-Churn.csv', index_col = 0)
+print(df)
