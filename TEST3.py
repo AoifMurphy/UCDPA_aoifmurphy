@@ -15,5 +15,4 @@ df1 = df.iloc[:,1:]
 df1['Churn'].replace(to_replace='Yes', value=1, inplace=True)
 df1['Churn'].replace(to_replace='No',  value=0, inplace=True)
 
-df_dummies = pd.get_dummies(df1)
-df_dummies.head()
+print(df1.head(), df1.tail())
