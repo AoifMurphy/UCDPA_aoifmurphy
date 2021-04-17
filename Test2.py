@@ -24,4 +24,8 @@ def import_csv(filename):
 
 import_csv("Telco-Customer-Churn.csv")
 
+x=telco_data["TotalCharge"].cummax()
+print(x)
+
+
 
