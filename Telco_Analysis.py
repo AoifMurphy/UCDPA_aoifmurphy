@@ -18,7 +18,9 @@ df=Customer_Churn[["gender", "Churn"]]
 print(df.head())
 
 df = pd.read_csv('Telco-Customer-Churn.csv', index_col = 0)
-print(df)
+print(df.head(20))
+sorted_df=df.groupby(["MonthlyCharges"]).mean()
+print(sorted_df.head(5))
 
 Gender_Churn=df[["gender", "Churn"]]
 print(Gender_Churn.head(25))
@@ -51,7 +53,7 @@ List_of_influences=['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure'
        'MonthlyCharges', 'TotalCharges', 'Churn']
 print(type(List_of_influences))
 
-
+print(sorted_df.head())
 
 
 
