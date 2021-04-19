@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 def import_data(Filename) :
     data=pd.read_csv(Filename)
@@ -34,10 +35,10 @@ print(Concat.head())
 
 
 Slice3=Telco_Cust_Churn.iloc[: , :2]
-Slice3.to_csv("SliceC.csv", index=False)
+Slice3.to_csv("Slice3.csv", index=False)
 print(Slice3)
 Slice4=Telco_Cust_Churn.iloc[: , 18:21]
-Slice.to_csv("SliceE.csv", index=False)
+Slice.to_csv("Slice4.csv", index=False)
 print(Slice4)
 New_df=pd.concat([Slice3, Slice4], ignore_index=True)
 print(New_df.head(5))
@@ -53,17 +54,11 @@ print(b)
 
 #Male Customers Total is 3555
 
-c = np.array([3488, 3555])
-
-print(np.mean(c))
-
-
-
-
-
-
-
-
-
-
+x=[3555, 3488]
+labels=["Male", "Female"]
+fig, ax= plt.subplots()
+ax.pie(x, labels=labels, autopct='%.0f%%')
+ax.set_title("Telco Customers")
+plt.show()
+plt.clf()
 
