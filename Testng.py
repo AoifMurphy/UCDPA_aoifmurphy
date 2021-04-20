@@ -24,8 +24,7 @@ Starbucks_Cust_Prof = pd.read_csv("profile.csv")
 print(Starbucks_Cust_Prof.head())
 print(Starbucks_Cust_Prof.shape)
 
-clean_data = Starbucks_Cust_Prof["income"].fillna(Starbucks_Cust_Prof["income"].mean()), inplace=True)
-print(clean_data)
+
 
 
 

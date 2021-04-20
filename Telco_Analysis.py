@@ -1,60 +1,21 @@
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-
-Customer_Churn=pd.read_csv("Telco-Customer-Churn.csv")
-print(Customer_Churn)
-print(Customer_Churn.describe)
-print(Customer_Churn.info)
-print(Customer_Churn.head())
-
-droprows=Customer_Churn.dropna()
-print(Customer_Churn.shape, droprows.shape)
-
-TotalSpend=Customer_Churn["TotalCharges"].sum()
+# Import the Telco data and insights
+Telco_data2=pd.read_csv("Telco-Customer-Churn.csv", index_col = 0)
+print(Telco_data2.describe)
+print(Telco_data2.info)
+print(Telco_data2.head())
+# Drop rows with na
+drop_rows=Telco_data2.dropna()
+print(Telco_data2.shape, drop_rows.shape)
+# Get Total Spend
+TotalSpend=Telco_data2["TotalCharges"].sum()
 print(TotalSpend)
-
-df=Customer_Churn[["gender", "Churn"]]
+# Get the breakdown of Gender and Churn
+df=Telco_data2[["gender", "Churn"]]
 print(df.head())
-
-df = pd.read_csv('Telco-Customer-Churn.csv', index_col = 0)
-print(df.head(20))
-sorted_df=df.groupby(["MonthlyCharges"]).mean()
-print(sorted_df.head(5))
-
-Gender_Churn=df[["gender", "Churn"]]
-print(Gender_Churn.head(25))
-
-Churn=df["Churn"]
-print(Churn.head(20))
-
-print(df)
-
-Totals=df.sum(axis=0, skipna=True)
-print(Totals)
-
-Infl=df.columns
-print(Infl)
-
-My_Dict={'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
-       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
-       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
-       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
-       'MonthlyCharges', 'TotalCharges', 'Churn'}
-
-print(My_Dict)
-print(type(My_Dict))
-
-
-List_of_influences=['gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
-       'PhoneService', 'MultipleLines', 'InternetService', 'OnlineSecurity',
-       'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV',
-       'StreamingMovies', 'Contract', 'PaperlessBilling', 'PaymentMethod',
-       'MonthlyCharges', 'TotalCharges', 'Churn']
-print(type(List_of_influences))
-
-print(sorted_df.head())
-
-
-
-
+# Sort by Monthly Charges
+sorted_df=Telco_data2.groupby(["MonthlyCharges"])
+print(sorted_df.head(15))
+# Show Churn
+Churn=Telco_data2["Churn"]
+print(Churn.head(15))
