@@ -30,6 +30,3 @@ print(clean_data)
 
 
 
-
-
-
